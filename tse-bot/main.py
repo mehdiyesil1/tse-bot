@@ -6,7 +6,7 @@ from datetime import datetime
 # -----------------------------
 # Config
 # -----------------------------
-CFLR_URL = "https://little-limit-4449.mehdihassani3051.workers.dev/?text="
+CFLR_URL = "https://tse-bot.mehdihassani3051.workers.dev/?text="
 
 # -----------------------------
 # Dummy data / placeholders
@@ -76,3 +76,4 @@ if x1:  # اگر فیلتر فعال است
     TseHitSender(post_n)
 
 print("Message sent:", post_n)
+
