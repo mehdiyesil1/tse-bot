@@ -1,0 +1,28 @@
+name: Run tse-bot
+
+# زمان‌بندی اجرای خودکار و امکان اجرای دستی
+on:
+  schedule:
+    - cron: "30 5 * * 1-5" # شنبه تا چهارشنبه ساعت 9 صبح ایران ≈ 5:30 UTC
+  workflow_dispatch: # امکان اجرای دستی
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. دریافت کد ریپازیتوری
+      - uses: actions/checkout@v3
+
+      # 2. نصب پایتون
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      # 3. نصب کتابخانه‌ها
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # 4. اجرای Script
+      - name: Run tse-bot
+        run: python main.py
